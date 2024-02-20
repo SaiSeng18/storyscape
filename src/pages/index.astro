@@ -1,5 +1,6 @@
 ---
-
+import Header from "../components/Header.astro";
+import NumberCountUp from "../components/react/NumberCountUp.jsx";
 ---
 
 <html lang="en">
@@ -8,9 +9,230 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"
+			rel="stylesheet"
+		/>
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<main class="p-5 flex w-full flex-col">
+			<Header />
+			<section class="w-full flex flex-col gap-5">
+				<div class="w-full h-[500px] flex">
+					<div class="h-full w-1/2 flex justify-start items-center">
+						<div class="w-full flex flex-col justify-center items-start pr-40 gap-5">
+							<p class="text-7xl">
+								Build And Share Interactive Stories On Our Platform!
+							</p>
+							<p class="font-medium text-lg">
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae id,
+								nulla molestiae rerum tempore ea aut amet quas esse laborum vel, sit
+								repellendus? Dignissimos, quaerat harum. Tempore cumque ipsa nobis.
+							</p>
+							<div class="h-20 flex gap-5">
+								<button
+									class="px-20 h-full border-2 font-medium rounded-full border-primary bg-primary w-fit text-lg text-nowrap"
+									>Join Us</button
+								>
+								<button
+									class="px-20 h-full border-2 font-medium rounded-full border-black bg-black w-fit text-lg text-nowrap text-white"
+									>Play Our Promo Video</button
+								>
+								<button
+									class="aspect-square h-full border-2 font-medium rounded-full border-black bg-black text-lg text-nowrap text-white flex justify-center items-center"
+									><svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="1em"
+										height="1em"
+										viewBox="0 0 24 24"
+										class="h-[35px] w-[35px] fill-primary text-primary">
+										<path
+											fill="none"
+											stroke="currentColor"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="m5 3l14 9l-14 9z"></path>
+									</svg></button
+								>
+							</div>
+						</div>
+					</div>
+					<div class="h-full w-1/2 bg-primary rounded-3xl overflow-hidden">
+						<img
+							src="/hero.png"
+							alt="Hero Image"
+							class="w-full h-full object-cover"
+						/>
+					</div>
+				</div>
+
+				<div class="w-full h-full flex">
+					<div class="w-1/2 h-full flex gap-5">
+						<div
+							class="h-full aspect-square rounded-3xl bg-secondary w-1/2 p-5 flex justify-between flex-col">
+							<div class="flex justify-between items-center">
+								<button
+									class="px-5 py-2 border-2 font-medium rounded-full border-black w-fit text-nowrap"
+									>Learn More</button
+								>
+
+								<button>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="1em"
+										height="1em"
+										viewBox="0 0 24 24"
+										class="h-[50px] w-[50px]">
+										<path
+											fill="none"
+											stroke="currentColor"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M7 7h10v10M7 17L17 7"></path>
+									</svg>
+								</button>
+							</div>
+
+							<div class="flex flex-col">
+								<p class="text-3xl">
+									<i>Engaging</i> and <br />
+									<i>Immersive</i> Experience
+								</p>
+								<p class="font-medium">
+									Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga
+									assumenda tempora aut in nostrum blanditiis porro eaque accusantium cum
+									nulla nihil impedit
+								</p>
+							</div>
+						</div>
+						<div
+							class="h-full aspect-square rounded-3xl bg-black w-1/2 p-5 flex justify-between flex-col">
+							<div class="flex justify-between items-center">
+								<div class="flex relative">
+									<div
+										class="h-[50px] w-[50px] rounded-full bg-primary overflow-hidden border border-black">
+									</div>
+									<div
+										class="h-[50px] w-[50px] rounded-full bg-primary overflow-hidden -translate-x-5 border border-black">
+										<img
+											src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+											alt="People"
+											class="object-cover"
+										/>
+									</div>
+									<div
+										class="h-[50px] w-[50px] rounded-full bg-primary overflow-hidden -translate-x-10 border border-black">
+										<img
+											src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+											alt="People"
+											class="object-cover"
+										/>
+									</div>
+									<div
+										class="h-[50px] w-[50px] rounded-full bg-primary overflow-hidden -translate-x-[60px] border border-black">
+										<img
+											src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+											alt="People"
+											class="object-cover"
+										/>
+									</div>
+								</div>
+
+								<button>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="1em"
+										height="1em"
+										viewBox="0 0 24 24"
+										class="h-[50px] w-[50px] text-white">
+										<path
+											fill="none"
+											stroke="currentColor"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M7 7h10v10M7 17L17 7"></path>
+									</svg>
+								</button>
+							</div>
+
+							<div class="flex flex-col text-white">
+								<p class="text-3xl">
+									<i>Easy-To-Use</i> Tools and <br />
+									<i>Community</i> Support
+								</p>
+								<p class="font-medium">
+									Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga
+									assumenda tempora aut in nostrum blanditiis porro eaque accusantium cum
+									nulla nihil impedit
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="w-1/2 p-5 flex flex-col items-center justify-between">
+						<div class="w-full flex justify-evenly items-center">
+							<div class="flex flex-col gap-5">
+								<NumberCountUp
+									client:load
+									from={50}
+									to={85.5}
+									className="text-7xl"
+									duration={1.5}
+									suffix="%"
+								/>
+								<p class="text-secondary text-xl">Increased <br /> Monetization</p>
+							</div>
+
+							<div class="flex flex-col gap-5">
+								<NumberCountUp
+									client:load
+									from={0}
+									to={25}
+									className="text-7xl"
+									duration={1.5}
+									suffix="K"
+								/>
+								<p class="text-secondary text-xl">Stories <br /> Created</p>
+							</div>
+
+							<div class="flex flex-col gap-5">
+								<NumberCountUp
+									client:load
+									from={0}
+									to={56}
+									className="text-7xl"
+									duration={1.5}
+									suffix="K"
+								/>
+								<p class="text-secondary text-xl">Users <br /> Joined</p>
+							</div>
+						</div>
+
+						<div
+							class="w-full border-2 border-black rounded-full text-xl font-medium px-20 py-10 flex justify-between items-center">
+							<a href="">Pricing</a>
+							<a href="">Blog</a>
+							<a href="">Membership</a>
+							<a href="">FAQ's</a>
+							<a href="">About Us</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
 	</body>
 </html>
+
+<style>
+	body,
+	html {
+		margin: 0;
+		padding: 0;
+		font-family: "Almarai", sans-serif;
+	}
+</style>
