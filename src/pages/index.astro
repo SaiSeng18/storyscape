@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 import Header from "../components/Header.astro";
 import NumberCountUp from "../components/react/NumberCountUp.jsx";
 ---
@@ -18,27 +20,28 @@ import NumberCountUp from "../components/react/NumberCountUp.jsx";
 		<title>Astro</title>
 	</head>
 	<body>
-		<main class="p-5 flex w-full flex-col">
+		<main class="p-5 flex w-full flex-col sm:p-2">
 			<Header />
 			<section class="w-full flex flex-col gap-5">
-				<div class="w-full h-[500px] flex">
-					<div class="h-full w-1/2 flex justify-start items-center">
-						<div class="w-full flex flex-col justify-center items-start pr-40 gap-5">
-							<p class="text-7xl">
+				<div class="w-full h-[500px] flex lg:flex-col lg:gap-10 lg:h-auto">
+					<div class="h-full w-1/2 flex justify-start items-center lg:w-full">
+						<div
+							class="w-full flex flex-col justify-center items-start pr-40 gap-5 lg:pr-0">
+							<p class="text-7xl 2xl:text-5xl">
 								Build And Share Interactive Stories On Our Platform!
 							</p>
-							<p class="font-medium text-lg">
+							<p class="font-medium text-lg 2xl:text-base">
 								Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae id,
 								nulla molestiae rerum tempore ea aut amet quas esse laborum vel, sit
 								repellendus? Dignissimos, quaerat harum. Tempore cumque ipsa nobis.
 							</p>
-							<div class="h-20 flex gap-5">
+							<div class="h-20 flex gap-5 2xl:h-16 xl:gap-2 sm:h-12">
 								<button
-									class="px-20 h-full border-2 font-medium rounded-full border-primary bg-primary w-fit text-lg text-nowrap"
+									class="px-20 h-full border-2 font-medium rounded-full border-primary bg-primary w-fit text-lg text-nowrap 2xl:px-10 sm:px-5"
 									>Join Us</button
 								>
 								<button
-									class="px-20 h-full border-2 font-medium rounded-full border-black bg-black w-fit text-lg text-nowrap text-white"
+									class="px-20 h-full border-2 font-medium rounded-full border-black bg-black w-fit text-lg text-nowrap text-white 2xl:px-10 sm:px-5 sm:hidden"
 									>Play Our Promo Video</button
 								>
 								<button
@@ -48,7 +51,7 @@ import NumberCountUp from "../components/react/NumberCountUp.jsx";
 										width="1em"
 										height="1em"
 										viewBox="0 0 24 24"
-										class="h-[35px] w-[35px] fill-primary text-primary">
+										class="h-[35px] w-[35px] md:w-[20px] md:h-[20px] fill-primary text-primary">
 										<path
 											fill="none"
 											stroke="currentColor"
@@ -61,19 +64,23 @@ import NumberCountUp from "../components/react/NumberCountUp.jsx";
 							</div>
 						</div>
 					</div>
-					<div class="h-full w-1/2 bg-primary rounded-3xl overflow-hidden">
-						<img
+					<div
+						class="h-full w-1/2 bg-primary rounded-3xl overflow-hidden lg:w-full lg:h-[500px] sm:h-[300px]">
+						<Image
 							src="/hero.png"
 							alt="Hero Image"
 							class="w-full h-full object-cover"
+							height={500}
+							width={1000}
+							loading="eager"
 						/>
 					</div>
 				</div>
 
-				<div class="w-full h-full flex">
-					<div class="w-1/2 h-full flex gap-5">
+				<div class="w-full h-full flex lg:flex-col lg:gap-10">
+					<div class="w-1/2 h-full grid grid-cols-2 sm:grid-cols-1 gap-5 lg:w-full">
 						<div
-							class="h-full aspect-square rounded-3xl bg-secondary w-1/2 p-5 flex justify-between flex-col">
+							class="h-full aspect-square rounded-3xl bg-secondary w-full p-5 flex justify-between flex-col">
 							<div class="flex justify-between items-center">
 								<button
 									class="px-5 py-2 border-2 font-medium rounded-full border-black w-fit text-nowrap"
@@ -99,11 +106,11 @@ import NumberCountUp from "../components/react/NumberCountUp.jsx";
 							</div>
 
 							<div class="flex flex-col">
-								<p class="text-3xl">
+								<p class="text-3xl 2xl:text-2xl xl:text-xl">
 									<i>Engaging</i> and <br />
 									<i>Immersive</i> Experience
 								</p>
-								<p class="font-medium">
+								<p class="font-medium xl:text-sm xl:line-clamp-3">
 									Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga
 									assumenda tempora aut in nostrum blanditiis porro eaque accusantium cum
 									nulla nihil impedit
@@ -111,34 +118,43 @@ import NumberCountUp from "../components/react/NumberCountUp.jsx";
 							</div>
 						</div>
 						<div
-							class="h-full aspect-square rounded-3xl bg-black w-1/2 p-5 flex justify-between flex-col">
+							class="h-full aspect-square rounded-3xl bg-black w-full p-5 flex justify-between flex-col">
 							<div class="flex justify-between items-center">
 								<div class="flex relative">
 									<div
-										class="h-[50px] w-[50px] rounded-full bg-primary overflow-hidden border border-black">
+										class="h-[50px] w-[50px] xl:w-[35px] xl:h-[35px] rounded-full bg-primary overflow-hidden border border-black">
 									</div>
 									<div
-										class="h-[50px] w-[50px] rounded-full bg-primary overflow-hidden -translate-x-5 border border-black">
-										<img
+										class="h-[50px] w-[50px] xl:w-[35px] xl:h-[35px] rounded-full bg-primary overflow-hidden -translate-x-5 border border-black">
+										<Image
 											src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 											alt="People"
 											class="object-cover"
+											width={50}
+											height={50}
+											loading="eager"
 										/>
 									</div>
 									<div
-										class="h-[50px] w-[50px] rounded-full bg-primary overflow-hidden -translate-x-10 border border-black">
-										<img
+										class="h-[50px] w-[50px] xl:w-[35px] xl:h-[35px] rounded-full bg-primary overflow-hidden -translate-x-10 border border-black">
+										<Image
 											src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 											alt="People"
 											class="object-cover"
+											width={50}
+											height={50}
+											loading="eager"
 										/>
 									</div>
 									<div
-										class="h-[50px] w-[50px] rounded-full bg-primary overflow-hidden -translate-x-[60px] border border-black">
-										<img
+										class="h-[50px] w-[50px] xl:w-[35px] xl:h-[35px] rounded-full bg-primary overflow-hidden -translate-x-[60px] border border-black">
+										<Image
 											src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 											alt="People"
 											class="object-cover"
+											width={50}
+											height={50}
+											loading="eager"
 										/>
 									</div>
 								</div>
@@ -162,11 +178,11 @@ import NumberCountUp from "../components/react/NumberCountUp.jsx";
 							</div>
 
 							<div class="flex flex-col text-white">
-								<p class="text-3xl">
+								<p class="text-3xl 2xl:text-2xl xl:text-xl">
 									<i>Easy-To-Use</i> Tools and <br />
 									<i>Community</i> Support
 								</p>
-								<p class="font-medium">
+								<p class="font-medium xl:text-sm xl:line-clamp-3">
 									Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga
 									assumenda tempora aut in nostrum blanditiis porro eaque accusantium cum
 									nulla nihil impedit
@@ -174,47 +190,37 @@ import NumberCountUp from "../components/react/NumberCountUp.jsx";
 							</div>
 						</div>
 					</div>
-					<div class="w-1/2 p-5 flex flex-col items-center justify-between">
-						<div class="w-full flex justify-evenly items-center">
+					<div
+						class="w-1/2 p-5 flex flex-col items-center justify-between lg:w-full lg:gap-10 lg:p-0">
+						<div class="w-full flex justify-evenly items-center lg:justify-between">
 							<div class="flex flex-col gap-5">
 								<NumberCountUp
 									client:load
 									from={50}
 									to={85.5}
-									className="text-7xl"
 									duration={1.5}
 									suffix="%"
 								/>
-								<p class="text-secondary text-xl">Increased <br /> Monetization</p>
+								<p class="text-secondary text-xl lg:text-base">
+									Increased <br /> Monetization
+								</p>
 							</div>
 
 							<div class="flex flex-col gap-5">
-								<NumberCountUp
-									client:load
-									from={0}
-									to={25}
-									className="text-7xl"
-									duration={1.5}
-									suffix="K"
-								/>
-								<p class="text-secondary text-xl">Stories <br /> Created</p>
+								<NumberCountUp client:load from={0} to={25} duration={1.5} suffix="K" />
+								<p class="text-secondary text-xl lg:text-base">
+									Stories <br /> Created
+								</p>
 							</div>
 
 							<div class="flex flex-col gap-5">
-								<NumberCountUp
-									client:load
-									from={0}
-									to={56}
-									className="text-7xl"
-									duration={1.5}
-									suffix="K"
-								/>
-								<p class="text-secondary text-xl">Users <br /> Joined</p>
+								<NumberCountUp client:load from={0} to={56} duration={1.5} suffix="K" />
+								<p class="text-secondary text-xl lg:text-base">Users <br /> Joined</p>
 							</div>
 						</div>
 
 						<div
-							class="w-full border-2 border-black rounded-full text-xl font-medium px-20 py-10 flex justify-between items-center">
+							class="w-full border-2 border-black rounded-full text-xl font-medium px-20 py-10 flex justify-between items-center xl:px-10 xl:py-6 xl:text-base sm:px-5 sm:py-5 sm:text-sm">
 							<a href="">Pricing</a>
 							<a href="">Blog</a>
 							<a href="">Membership</a>

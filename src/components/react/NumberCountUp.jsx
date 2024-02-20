@@ -15,7 +15,12 @@ const NumberCountUp = ({ from, to, duration, className = "", suffix = "" }) => {
 		return () => controls.stop();
 	}, [from, to]);
 
-	return <p className={`${className} font-sans`} ref={ref} />;
+	return (
+		<p
+			className={`${className} font-sans text-7xl xl:text-5xl md:text-3xl`}
+			ref={ref}
+		/>
+	);
 };
 
 export default NumberCountUp;
