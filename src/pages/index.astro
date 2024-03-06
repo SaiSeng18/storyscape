@@ -17,7 +17,11 @@ import NumberCountUp from "../components/react/NumberCountUp.jsx";
 			href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"
 			rel="stylesheet"
 		/>
-		<title>Astro</title>
+		<meta
+			name="description"
+			content="Storyscape. Build And Share Interactive Stories On Our Platform!"
+		/>
+		<title>Storyscape</title>
 	</head>
 	<body>
 		<main class="p-5 flex w-full flex-col sm:p-2">
@@ -67,7 +71,7 @@ import NumberCountUp from "../components/react/NumberCountUp.jsx";
 					<div
 						class="h-full w-1/2 bg-primary rounded-3xl overflow-hidden lg:w-full lg:h-[500px] sm:h-[300px]">
 						<Image
-							src="/hero.png"
+							src="/hero.jpg"
 							alt="Hero Image"
 							class="w-full h-full object-cover"
 							height={500}
@@ -80,10 +84,19 @@ import NumberCountUp from "../components/react/NumberCountUp.jsx";
 				<div class="w-full h-full flex lg:flex-col lg:gap-10">
 					<div class="w-1/2 h-full grid grid-cols-2 sm:grid-cols-1 gap-5 lg:w-full">
 						<div
-							class="h-full aspect-square rounded-3xl bg-secondary w-full p-5 flex justify-between flex-col">
-							<div class="flex justify-between items-center">
+							class="h-full aspect-square rounded-3xl bg-secondary w-full p-5 flex justify-between flex-col relative overflow-hidden">
+							<Image
+								src="/1.jpg"
+								alt="People"
+								class="object-cover w-full h-full absolute top-0 left-0"
+								width={200}
+								height={200}
+								loading="eager"
+							/>
+
+							<div class="flex justify-between items-center z-10 text-white">
 								<button
-									class="px-5 py-2 border-2 font-medium rounded-full border-black w-fit text-nowrap"
+									class="px-5 py-2 border-2 font-medium rounded-full border-white w-fit text-nowrap"
 									>Learn More</button
 								>
 
@@ -105,7 +118,7 @@ import NumberCountUp from "../components/react/NumberCountUp.jsx";
 								</button>
 							</div>
 
-							<div class="flex flex-col">
+							<div class="flex flex-col z-10 text-white">
 								<p class="text-3xl 2xl:text-2xl xl:text-xl">
 									<i>Engaging</i> and <br />
 									<i>Immersive</i> Experience
@@ -117,9 +130,19 @@ import NumberCountUp from "../components/react/NumberCountUp.jsx";
 								</p>
 							</div>
 						</div>
+
 						<div
-							class="h-full aspect-square rounded-3xl bg-black w-full p-5 flex justify-between flex-col">
-							<div class="flex justify-between items-center">
+							class="h-full aspect-square rounded-3xl bg-black w-full p-5 flex justify-between flex-col relative overflow-hidden">
+							<Image
+								src="/2.jpg"
+								alt="People"
+								class="object-cover w-full h-full absolute top-0 left-0"
+								width={200}
+								height={200}
+								loading="eager"
+							/>
+
+							<div class="flex justify-between items-center z-10">
 								<div class="flex relative">
 									<div
 										class="h-[50px] w-[50px] xl:w-[35px] xl:h-[35px] rounded-full bg-primary overflow-hidden border border-black">
@@ -177,7 +200,7 @@ import NumberCountUp from "../components/react/NumberCountUp.jsx";
 								</button>
 							</div>
 
-							<div class="flex flex-col text-white">
+							<div class="flex flex-col text-white z-10">
 								<p class="text-3xl 2xl:text-2xl xl:text-xl">
 									<i>Easy-To-Use</i> Tools and <br />
 									<i>Community</i> Support
